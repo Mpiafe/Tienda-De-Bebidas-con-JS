@@ -1,5 +1,12 @@
 //solicitar al usuario que ingrese el producto que desea comprar.
-let cantidad = 0;
+let usuario = "Mpiafe";
+
+
+let login = prompt ("Ingresa tu usuario")
+
+if (usuario === login){
+
+    let cantidad = 0;
 
 function calcularPedido (cantidad, precio){
     if (cantidad >=1){
@@ -42,11 +49,17 @@ switch (opciones){
     }
 
     //condicion de salida del while
-    let opcion = prompt(
+    opciones = prompt(
         "Elegi la/s bebida/s que queres comprar: \n1- Fernet. \n2- Vodka. \n3- Aperol. \nPresioná X para finalizar" 
     );
   }
 
+
+
+    }
+     else {
+    alert ("No es un usuario valido");
+};
 
 
 
