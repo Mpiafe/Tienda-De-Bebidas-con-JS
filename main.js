@@ -8,14 +8,18 @@ if (usuario === login){
 
     let cantidad = 0;
 
+
+
 function calcularPedido (cantidad, precio){
     if (cantidad >=1){
-        cantidad = cantidad++;
+        cantidad = cantidad ;
         alert ("sumaste" + " " + cantidad + " " + "producto/s" + " " + "a tu carrito de compras");
         let resultado = cantidad * precio;
          return alert ("El total de tu compra es $" + " "+  resultado);
         } 
-}
+};
+
+
 
 let opciones = prompt(
 "Elegi la/s bebida/s que queres comprar: \n1- Fernet. \n2- Vodka. \n3- Aperol. \n Presioná X para finalizar."
