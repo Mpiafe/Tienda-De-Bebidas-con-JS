@@ -10,126 +10,27 @@
     <link rel="icon" href="images/logoRojo.PNG">
 </head>
 <body>
-    <header class="header">
-      <div>
-       <img src="images/logoRojo.PNG">     
-    </header>
+      <header class="header">
+        <div>
+        <img src="images/logoRojo.PNG"> 
+        </div>    
+      </header>
 
-    <section class="titulo">
-      <div> 
-        <h1>Bienvenidos a nuestra Tienda on Line</h1>
-      </div>
-    </section>
+      <section class="titulo">
+        <div> 
+          <h1>Bienvenidos a nuestra Tienda on Line</h1>
+        </div>
+      </section>
 
-   <main>
-      <div class="containerBebidas">
-
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/GinBombay.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                 <h5 class="card-title"><b>Gin Bombay Sapphire<br> 750 cc</b></h5>
-                 <p class="card-text"><font color="red"><b>$ 5.000</b></font></p>
-                 <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>
+       <main>
+     
+          <div id="contenedor-bebidas">
+          <!--contenido dinamico-->      
           </div>
-
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Malibu.png" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Ron Malibu<br>750cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 9.300</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>
-          </div>
-                    
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Baileys.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Bailey's Original Cream<br>375 cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 3.800</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>
-          </div>
-              
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Aperol.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Aperol<br>750cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 1.300</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>
-          </div>
-                   
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Fernet.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Fernet Branca<br>750cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 1.700</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>
-          </div>
+     
+      </main>
 
 
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Whisky.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Whisky Jonnie Walker<br>700cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 16.000</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div>  
-          </div>
-          
-          
-
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Smirnoff.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                  <h5 class="card-title"><b>Vodka Smirnoff<br>700 cc</b></h5>
-                  <p class="card-text"><font color="red"><b>$ 1.300</b></font></p>
-                  <a href="#" class="btn btn-dark"><b>Agregar<br>articulo</b></a>
-               </div> 
-          </div>
-
-          <div class="card" style="width: 18rem;">
-               <img src="./images/fotos ok/Absolut.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                    <h5 class="card-title"><b>Vodka Absolut Original<br>1400cc</b></h5>
-                    <p class="card-text"><font color="red"><b>$ 4.000</b></font></p>
-                    <a href="#" class="btn btn-dark"><b>Agregar<br> articulo</b></a>
-               </div> 
-          </div>
-      </div>
-   </main>
-
-  <div class="pedidoContainer">
-   <form class="pedido">
-     <select>
-     <option selected>Selecciona la bebida que queres comprar</option>
-     <option value="1">Gin Bombay Sapphire 750 cc</option>
-     <option value="2">Ron Malibu 750cc</option>
-     <option value="3">Bailey's Original Cream 375 cc</option>
-     <option value="4">Aperol 750cc</option>
-     <option value="5">Fernet Branca 750cc</option>
-     <option value="6">Whisky Jonnie Walker 700cc</option>
-     <option value="7">Vodka Smirnoff 700 cc</option>
-     <option value="8">Vodka Absolut Original 1400cc</option>
-     </select>
-
-
- 
-     <div>
-          <label for="Cantidad" class="form-label">Cantidad</label>
-          <input type="number" >
-     </div>
-     <div>
-          <label for="Precio" class="form-label">Precio por Unidad</label>
-          <input type="text" >
-     </div>
-     <div>
-          <label for="Subtotal" class="form-label">Total a pagar</label>
-          <input type="subtotal">
-     </div>
- </form>
-  </div>
+<scrip src="./terceraEntrega.js"></script>
 </body>
 </html>
