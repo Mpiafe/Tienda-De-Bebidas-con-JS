@@ -58,40 +58,63 @@ const productos = [
 
 const contenedor= document.querySelector (".contenedor-bebidas")
 
+
 function crearHtml (productos){
-  let html;
   
-  for (const producto of productos) {
-  
-   html=
-  
+  productos.forEach(producto => {
+
+  const divProducto= document.createElement ("div") ;
+  divProducto.innerHTML= 
   ` <div class="card" style="width: 21rem;">
                <img src="./images/${producto.img}" class="card-img-top" alt="...">
                <div class="card-body">
                <h5 class="card-title"><b>${producto.nombre}</b></h5>
                <p class="card-text"><font color="red"><b>$ ${producto.precio}</b></font></p>
-               <button class="btn btn-dark"><b>Comprar</b></button>
+               <button id= "${producto.id}" class="btn btn-dark"><b>Comprar</b></button>
              </div>` ;
   
- contenedor.innerHTML += html;
+ contenedor.appendChild (divProducto)
 
-}
-};
+////////////////EVENTOS//////////////////////
 
-crearHtml (productos);
+const btnComprar = document.getElementById(`${producto.id}`);
 
-//////////////////////EVENTOS//////////////////////////
+btnComprar.addEventListener('click', () => {
+const bebidas = document.getElementById("selectBebidas");
+let option = `<option value= "${producto.id}">${producto.nombre}</option>`;
+bebidas.innerHTML = option;
 
-//Select dinamico.
+const precio = document.getElementById("precio");
+precio.innerText= String(producto.precio)
 
 
-////Calcular Total////
-const btnComprar = document.getElementsByClassName(".btn btn-dark")
-
-btnComprar.addEventListener('click', (event) => {
-  const bebidas = document.getElementsByClassName (".selectBebidas");
-  bebidas.textContent = `<option value="${producto.id}">${producto.nombre}</option>`;
 });
+})};
+
+crearHtml(productos);
+
+
+/////////EVENTO CALCULAR TOTAL///////////
+///Declaro funcion///
+/*function calculartotal (cantidad, precio){
+  if (cantidad >=1){
+      cantidad = cantidad ;
+  let resultado = cantidad * precio;
+  return resultado;*/
+/*const total = document.getElementById ("total")
+ 
+  
+cantidad.onCh    ("change", ()=>{
+const cantidad = document.getElementById("caja-cantidad").value
+
+if (cantidad >=1){
+  
+let resultado = cantidad * precio;
+return resultado;
+
+calculartotal(total)
+}})*/
+  ;
 
 
 
@@ -99,23 +122,7 @@ btnComprar.addEventListener('click', (event) => {
 
 
 
-
-
-
-
-/*btnComprar.addEventListener('click', (e)=>{
-  e.preventDefault();
-  seleccionProducto();
-
-});*/
-
-
-
-
-
-/*const btnPedido = document.getElementsByClassName(".btn btn-danger")
-
-btnPedido.addEventListener("click", ()=>{
+/*btnPedido.addEventListener("click", ()=>{
   Swal.fire({
     position: 'top-end',
     icon: 'success',
@@ -124,10 +131,5 @@ btnPedido.addEventListener("click", ()=>{
     timer: 1500
   })
 });
-const carrito= [];
-
-function agregarAlCarrito (nombre){
-  let prodEncontrado= productos.find(producto =>producto.nombre === parseInt (id))
-  carrito.push (prodEncontrado);
-}*/
+*/
 

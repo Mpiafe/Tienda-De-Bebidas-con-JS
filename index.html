@@ -33,18 +33,20 @@
       </div>
       <div>
         <form class="form-Container">
-          <div>
-            Seleccione su Bebida:
-          </div>
-          <select class="selectBebidas">
-            <option value="Default"><b>Seleccione la bebida que quiere comprar</b></option>
-          </select>
-          
-          <label>Cantidad</label>
-          <input type="number" id="caja-cantidad">
-          <label>Total</label>
-          <input type="text" id="total">
-         
+        
+        <select id="selectBebidas" class=".selectBebidas">
+          <option value="Default">Seleccione la bebida que desea comprar</option>
+        </select>
+
+        <label>Cantidad</label>
+        <input type="number" id="caja-cantidad">
+        
+        <label>Precio</label>
+        <input id="precio" type="text" style="color:black">
+
+        <label>Total</label>
+        <input  id="total" type="text" readonly>
+        </form>
           
       
       <div class="boton">
