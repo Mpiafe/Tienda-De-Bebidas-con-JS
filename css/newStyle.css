@@ -66,58 +66,64 @@ transform: translate(-30%,0);
     flex-direction: row;
     justify-content:center;
     text-align: center;
-    column-gap: 3rem;
     font-size: 0.5rem;
-    margin-top: 0; 
+    margin-top: 0%; 
    
 }
-#contenedor-bebidas{
+.contenedor-bebidas {
     background-color: black;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: max-content;
+    margin-top: 0%;
+    
     }
     .card-body{
-       
-        background-color: white
-    }
-    .pedidoContainer{
+        background-color: white;
+    } 
+   .pedido{
+    background-color: black;
+    color: white;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    text-align: center;
+    font-size: 0.5rem;
+    margin-top: 0%; 
+    margin-bottom: 0%;
+   
+   }
+   
+    
+    .form-Container{
         background-color: black;
+        color:white;
+        font-size: 1.2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 0%;
-       }
-       .pedidoContainer div{
-        background-color: black;
-        color: white;
-        display:flex;
-        flex-direction: row;
-        justify-content:center;
-        text-align: center;
-        font-size: 0.2rem;
-        margin-top: 3%;
-        margin-bottom: 35%;
-     
+        margin-bottom: 0%;
        }
 
-.pedido select{
-    color:white;
-    background-color:black;
-    margin-top: 15%;
-    font-size: 1.2rem;
-   font-weight: bold;
+    
+
+    .boton {
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        background-color: black;
+        color:white;
+        height: 100%;
+        width: 100%;
+        margin-top: 0%;
+    
+    }   
+.boton button{
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
-   .pedido div{
-    color: white;
-    background-color:black;
-    font-size: 1.2rem;
-   font-weight: bold;
-   margin-top: 5%;
-   margin-bottom: 5%;
-   }
-   
   

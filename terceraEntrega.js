@@ -1,5 +1,5 @@
 // Mi array con mi lista de productos.
-const productos =[
+const productos = [
   {
    id: 1,
    nombre: "Gin Bombay Sapphire 750 cc", 
@@ -11,13 +11,13 @@ const productos =[
   id: 2,
   nombre: "Ron Malibu 750cc", 
   precio: 9300,
-  img: "Malibu.jpg",
+  img: "Malibu.png",
   },
   {
   id: 3,
   nombre: "Bailey's Original Cream 375 cc", 
   precio: 3800,
-  img: "Bailey.jpg", 
+  img: "Baileys.jpg", 
   },
   {
   id: 4,
@@ -49,27 +49,28 @@ const productos =[
   precio: 4000,
   img: "Absolut.jpg", 
   },
+  
  
 ];
 
 /////////////////////////FUNCIONES///////////////////////////////////////////////
 //Funcion para crear html.
 
-const contenedor= document.getElementById ("contenedor-bebidas")
+const contenedor= document.querySelector (".contenedor-bebidas")
 
-function crearHtml (array){
+function crearHtml (productos){
   let html;
   
-  for (const producto of array) {
+  for (const producto of productos) {
   
    html=
   
-  ` <div class="card" style="width: 18rem;">
+  ` <div class="card" style="width: 21rem;">
                <img src="./images/${producto.img}" class="card-img-top" alt="...">
                <div class="card-body">
                <h5 class="card-title"><b>${producto.nombre}</b></h5>
                <p class="card-text"><font color="red"><b>$ ${producto.precio}</b></font></p>
-               <a href="#" class="btn btn-dark"><b>Comprar</b></a>
+               <button class="btn btn-dark"><b>Comprar</b></button>
              </div>` ;
   
  contenedor.innerHTML += html;
@@ -79,6 +80,18 @@ function crearHtml (array){
 
 crearHtml (productos);
 
+//////////////////////EVENTOS//////////////////////////
+
+//Select dinamico.
+
+
+////Calcular Total////
+const btnComprar = document.getElementsByClassName(".btn btn-dark")
+
+btnComprar.addEventListener('click', (event) => {
+  const bebidas = document.getElementsByClassName (".selectBebidas");
+  bebidas.textContent = `<option value="${producto.id}">${producto.nombre}</option>`;
+});
 
 
 
@@ -87,4 +100,34 @@ crearHtml (productos);
 
 
 
+
+
+
+/*btnComprar.addEventListener('click', (e)=>{
+  e.preventDefault();
+  seleccionProducto();
+
+});*/
+
+
+
+
+
+/*const btnPedido = document.getElementsByClassName(".btn btn-danger")
+
+btnPedido.addEventListener("click", ()=>{
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Confirmación de Pedido',
+    showConfirmButton: false,
+    timer: 1500
+  })
+});
+const carrito= [];
+
+function agregarAlCarrito (nombre){
+  let prodEncontrado= productos.find(producto =>producto.nombre === parseInt (id))
+  carrito.push (prodEncontrado);
+}*/
 
