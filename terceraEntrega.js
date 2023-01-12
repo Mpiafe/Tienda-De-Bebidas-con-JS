@@ -116,11 +116,11 @@ total.value= inputcantidad * precio.value;
 }); 
  
 ///Boton REALIZAR PEDIDO////
-const btnPedido= document.getElementsByName("boton");
+const btnPedido= document.getElementById('btn-pedido');
 
 btnPedido.addEventListener("click", ()=>{
   Swal.fire(
-    'Excelente!',
+    'Felicitaciones!',
     'Tu pedido se realizo con exito!',
     'success'
   )
