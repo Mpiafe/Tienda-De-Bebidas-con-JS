@@ -85,7 +85,7 @@ let option = `<option value= "${producto.id}">${producto.nombre}</option>`;
 bebidas.innerHTML = option;
 
 const precio = document.getElementById("precio");
-precio.innerText= String(producto.precio)
+precio.value= producto.precio
 
 
 });
@@ -101,35 +101,29 @@ crearHtml(productos);
       cantidad = cantidad ;
   let resultado = cantidad * precio;
   return resultado;*/
-/*const total = document.getElementById ("total")
+const total = document.getElementById ("total")
+const cantidad = document.getElementById("caja-cantidad")
  
   
-cantidad.onCh    ("change", ()=>{
-const cantidad = document.getElementById("caja-cantidad").value
-
-if (cantidad >=1){
-  
-let resultado = cantidad * precio;
-return resultado;
-
-calculartotal(total)
-}})*/
-  ;
+cantidad.addEventListener ("change", ()=>{
+const inputcantidad = document.getElementById("caja-cantidad").value
 
 
+if (inputcantidad >=1){  
+ 
+total.value= inputcantidad * precio.value;
+}
+}); 
+ 
+///Boton REALIZAR PEDIDO////
+const btnPedido= document.getElementsByName("boton");
 
-
-
-
-
-/*btnPedido.addEventListener("click", ()=>{
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Confirmación de Pedido',
-    showConfirmButton: false,
-    timer: 1500
-  })
+btnPedido.addEventListener("click", ()=>{
+  Swal.fire(
+    'Excelente!',
+    'Tu pedido se realizo con exito!',
+    'success'
+  )
 });
-*/
+
 
