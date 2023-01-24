@@ -126,4 +126,7 @@ btnPedido.addEventListener("click", ()=>{
   )
 });
 
+//////carrito de compras////
+//Fetch///
+
 

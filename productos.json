@@ -1,0 +1,50 @@
+[
+    {
+       "id":1,
+       "nombre":"Gin Bombay Sapphire 750 cc",
+       "precio":5000,
+       "img":"GinBombay.jpg"
+    },
+    {
+       "id":2,
+       "nombre":"Ron Malibu 750cc",
+       "precio":9300,
+       "img":"Malibu.png"
+    },
+    {
+       "id":3,
+       "nombre":"Bailey's Original Cream 375 cc",
+       "precio":3800,
+       "img":"Baileys.jpg"
+    },
+    {
+       "id":4,
+       "nombre":"Aperol 750cc",
+       "precio":1300,
+       "img":"Aperol.jpg"
+    },
+    {
+       "id":5,
+       "nombre":"Fernet Branca 750cc",
+       "precio":1700,
+       "img":"Fernet.jpg"
+    },
+    {
+       "id":6,
+       "nombre":"Whisky Jonnie Walker 700cc",
+       "precio":16000,
+       "img":"Whisky.jpg"
+    },
+    {
+       "id":7,
+       "nombre":"Vodka Smirnoff 700 cc",
+       "precio":1300,
+       "img":"Smirnoff.jpg"
+    },
+    {
+       "id":8,
+       "nombre":"Vodka Absolut Original 1400cc",
+       "precio":4000,
+       "img":"Absolut.jpg"
+    }]
+ 
