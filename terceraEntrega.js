@@ -95,12 +95,7 @@ crearHtml(productos);
 
 
 /////////EVENTO CALCULAR TOTAL///////////
-///Declaro funcion///
-/*function calculartotal (cantidad, precio){
-  if (cantidad >=1){
-      cantidad = cantidad ;
-  let resultado = cantidad * precio;
-  return resultado;*/
+
 const total = document.getElementById ("total")
 const cantidad = document.getElementById("caja-cantidad")
  
