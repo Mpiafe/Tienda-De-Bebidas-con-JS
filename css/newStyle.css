@@ -77,7 +77,6 @@ transform: translate(-30%,0);
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 0%;
-   
     
     }
     .card-body{
@@ -97,19 +96,35 @@ transform: translate(-30%,0);
    }
    
     
-    .containerCarrito {
+    .form-Container{
         background-color: black;
-        color: white;
-        display:flex;
-        flex-direction: row;
-        justify-content:center;
-        text-align: center;
-        font-size: 0.5rem;
-        margin-top: 0%; 
-        margin-bottom: 10%;
-    }
-        
+        color:white;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0%;
+        margin-bottom: 0%;
+       }
+
     
+
+    .boton {
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        background-color: black;
+        color:white;
+        height: 100%;
+        width: 100%;
+        margin-top: 0%;
+    
+    }   
+.boton button{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
 
     
 
