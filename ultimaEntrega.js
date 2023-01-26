@@ -49,6 +49,8 @@ function enviarAForm(producto) {
     }
   });
 
+  ///Boton AGREGAR////
+
   const btnAgregar = document.getElementById("botonAgregar");
   
   btnAgregar.addEventListener("click", () => {
@@ -58,58 +60,87 @@ function enviarAForm(producto) {
   });
 }
 
-/////////EVENTO CALCULAR TOTAL///////////
+//Funcion para eliminar item//
+const iconoEliminar = document.querySelector (".icono-eliminar")
 
+/*iconoEliminar.addEventListener ((click, ()=>{
+  carrito.length = []
+  pintarHtmlPedido()*/
 
-///Boton AGREGAR////
+///Funcion para pintar tabla////
 
 
 function pintarHtmlPedido(carrito) {
   const contenedorPedido = document.querySelector(".contenedorPedido");
+  let iconoEliminar = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+   </svg>`
 
   carrito.forEach((producto) => {
     const pedidoProducto = document.createElement("div");
-    pedidoProducto.innerHTML = `<table class="table">
+    pedidoProducto.innerHTML = `
+    <table class="table table-dark table-striped">
+
     <thead class="items">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Producto</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Total</th>
-      </tr>
-    </thead>
+    <tr>
+      
+      <th scope="col">Producto</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Total</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
     <tbody class="bodyprod">
-      <tr>
-        <th scope="row">1</th>
+   <tr>
+        
         <td>${producto.nombre}</td>
         <td>${producto.precio}</td> 
         <td>${producto.cantidad}</td>
         <td>${total.value}</td>
+        <td><span class="icono-eliminar" onclick="eliminarItem(${producto.id})">${iconoEliminar}
+        </span></td>
+        
       </tr>   
     </tbody>
-  </table>
-  <div class="btnPedido">
-  <button id="botonPedido" type="button" class="btn btn-danger"><b>Confirmar Pedido</b></button>
-  </div>`
-  
+
+    </table>`
+    
   ;
 
     contenedorPedido.appendChild(pedidoProducto);
-
+    
   });
 
+
+  ///Boton  confirmar pedido///
   const btnPedido= document.getElementById('botonPedido');
 
   btnPedido.addEventListener("click", ()=>{
-    Swal.fire(
-      'Felicitaciones!',
-      'Tu pedido se realizo con exito!',
-      'success'
-    )
+    const { value: formValues } =  Swal.fire({
+      title: 'Complete el formulario realizar envio',
+      html:
+        '<input id="swal-input1" class="swal2-input" placeholder= "Nombre y Apellido">' +
+        '<input id="swal-input2" class="swal2-input" placeholder= "Domicilio">' +
+        '<input id="swal-input3" class="swal2-input" placeholder= "Correo electronico">',
+      focusConfirm: false,
+      preConfirm: () => {
+        return [
+          document.getElementById('swal-input1').value,
+          document.getElementById('swal-input2').value
+          
+        ]
+      }
+    })
+    
+    if (formValues) {
+      Swal.fire(JSON.stringify(formValues))
+    }
+   
+
   })
-
-
+ 
 }
 
 
