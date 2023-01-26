@@ -29,6 +29,7 @@ function crearHtml(productos) {
 }
 
 const carrito = [];
+
 function enviarAForm(producto) {
   console.log(producto);
 
@@ -54,18 +55,25 @@ function enviarAForm(producto) {
   const btnAgregar = document.getElementById("botonAgregar");
   
   btnAgregar.addEventListener("click", () => {
-  carrito.push({...producto, cantidad: parseInt(cantidad.value), precioTotal: parseInt(total.value)})
-  console.log(carrito)
-  pintarHtmlPedido(carrito)
-  });
+    carrito.push({...producto, cantidad: parseInt(cantidad.value), precioTotal: parseInt(total.value)})
+    console.log(carrito)
+    pintarHtmlPedido(carrito)
+    });
+  
+
 }
+/*Funcion para eliminar producto del carrito//
+const vaciarCarrito = document.getElementsByClassName (".icono-eliminar")
 
-//Funcion para eliminar item//
-const iconoEliminar = document.querySelector (".icono-eliminar")
+vaciarCarrito.addEventListener ("click", (${producto})=>{
+  let productId = producto.id
+  carrito = carrito.filter((producto) => producto.id !== productId)
+  mostrarCarrito()
+})
 
-/*iconoEliminar.addEventListener ((click, ()=>{
-  carrito.length = []
-  pintarHtmlPedido()*/
+function mostrarCarrito (){
+
+}*/
 
 ///Funcion para pintar tabla////
 
@@ -99,15 +107,15 @@ function pintarHtmlPedido(carrito) {
         <td>${producto.precio}</td> 
         <td>${producto.cantidad}</td>
         <td>${total.value}</td>
-        <td><span class="icono-eliminar" onclick="eliminarItem(${producto.id})">${iconoEliminar}
-        </span></td>
+        <td><span class="icono-eliminar" onclick="eliminarItem(${producto.id})">${iconoEliminar}</span></td>
+      
         
       </tr>   
     </tbody>
 
     </table>`
     
-  ;
+
 
     contenedorPedido.appendChild(pedidoProducto);
     
@@ -140,6 +148,7 @@ function pintarHtmlPedido(carrito) {
    
 
   })
+
  
 }
 
@@ -151,4 +160,5 @@ fetch(url)
   .then((data) => {
     productos = data;
     crearHtml(productos);
-  });
+  }
+  );
