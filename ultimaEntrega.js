@@ -59,24 +59,12 @@ function enviarAForm(producto) {
     console.log(carrito)
     pintarHtmlPedido(carrito)
     });
-  
 
 }
 //Funcion para eliminar producto del carrito//
 function mostrarCarrito (){
   const contenedorPedido = document.querySelector(".contenedorPedido");
-  contenedorPedido.innerHTML = `<table class="table table-dark table-striped">
-
-  <thead class="items">
-  <tr>
-    
-    <th scope="col">Producto</th>
-    <th scope="col">Precio</th>
-    <th scope="col">Cantidad</th>
-    <th scope="col">Total</th>
-    <th scope="col">Eliminar</th>
-  </tr>
-</thead>`
+  contenedorPedido.innerHTML = ""
 }
 
 const eliminarItem = (id) => {
