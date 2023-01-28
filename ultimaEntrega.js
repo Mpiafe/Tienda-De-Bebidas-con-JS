@@ -64,7 +64,7 @@ function enviarAForm(producto) {
 //Funcion para eliminar producto del carrito//
 function mostrarCarrito (){
   const contenedorPedido = document.querySelector(".contenedorPedido");
-  contenedorPedido.innerHTML = ""
+  contenedorPedido.innerHTML = "";
 }
 
 const eliminarItem = (id) => {
