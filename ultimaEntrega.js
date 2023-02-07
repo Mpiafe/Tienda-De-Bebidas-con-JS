@@ -2,6 +2,7 @@
 
 const url = "./data.json";
 
+
 //Funcion para crear html.
 
 const contenedor = document.querySelector(".contenedor-bebidas");
@@ -48,30 +49,35 @@ function enviarAForm(producto) {
     if (inputcantidad >= 1) {
       total.value = inputcantidad * precio.value;
     }
-  });
+  })
+;
 
   ///Boton AGREGAR////
 
   const btnAgregar = document.getElementById("botonAgregar");
   
   btnAgregar.addEventListener("click", () => {
-    carrito.push({...producto, cantidad: parseInt(cantidad.value), precioTotal: parseInt(total.value)})
-    console.log(carrito)
-    pintarHtmlPedido(carrito)
-    });
+    const existe = carrito.some (prod =>prod.id == producto.id)
 
+    if (!existe){
+    carrito.push ({...producto, cantidad: parseInt(cantidad.value), precioTotal: parseInt(total.value)})
 }
+console.log (carrito)
+pintarHtmlPedido(carrito)
+  })
+};
+//Esta funcion esta mal no la utilice en la correcion del 01/02
 //Funcion para eliminar producto del carrito//
-function mostrarCarrito (){
+/*function mostrarCarrito (){
   const contenedorPedido = document.querySelector(".contenedorPedido");
   contenedorPedido.innerHTML = "";
-}
+}*/
 
 const eliminarItem = (id) => {
     let borrar = carrito.find((producto) =>  producto.id === id)
     let indice = carrito.indexOf(borrar)
     carrito.splice(indice, 1)
-    mostrarCarrito ()
+   pintarHtmlPedido (carrito)
 
   
 };
@@ -80,6 +86,7 @@ const eliminarItem = (id) => {
 ///Funcion para pintar tabla////
 function pintarHtmlPedido(carrito) {
   const contenedorPedido = document.querySelector(".contenedorPedido");
+  contenedorPedido.innerHTML = "";
 
   let iconoEliminar = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -121,6 +128,11 @@ function pintarHtmlPedido(carrito) {
     contenedorPedido.appendChild(pedidoProducto);
     
   });
+
+  // Funcion para guardar info en el carrito//
+function guardarStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
   ///Boton  confirmar pedido///
   const btnPedido= document.getElementById('botonPedido');
