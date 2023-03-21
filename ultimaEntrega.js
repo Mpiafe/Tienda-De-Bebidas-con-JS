@@ -57,7 +57,7 @@ function enviarAForm(producto) {
   const btnAgregar = document.getElementById("botonAgregar");
   
   btnAgregar.addEventListener("click", () => {
-    const existe = carrito.some (prod =>prod.id == producto.id)
+    const existe = carrito.find (prod =>prod.id == producto.id)
 
     if (!existe){
     carrito.push ({...producto, cantidad: parseInt(cantidad.value), precioTotal: parseInt(total.value)})
@@ -114,7 +114,7 @@ function pintarHtmlPedido(carrito) {
         <td>${producto.nombre}</td>
         <td>${producto.precio}</td> 
         <td>${producto.cantidad}</td>
-        <td>${total.value}</td>
+        <td>${parseInt(producto.cantidad) * parseInt(producto.precio)}</td>
         <td><span class="icono-eliminar" onclick="eliminarItem(${producto.id})">${iconoEliminar}</span></td>
       
         
